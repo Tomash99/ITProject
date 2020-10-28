@@ -1,0 +1,22 @@
+﻿@model IEnumerable<webapsmvc.Models.Phone>
+@{
+    ViewData["Title"] = "Каталог товарів";
+}
+<h3>Смартфони</h3>
+<table class="table-condensed">
+    <tr>
+        <td>Модель</td>
+        <td>Виробник</td>
+        <td>Ціна</td>
+        <td></td>
+    </tr>
+    @foreach (var phone in Model)
+    {
+        <tr>
+            <td>@phone.Name</td>
+            <td>@phone.Company</td>
+            <td>@phone.Price</td>
+            <td><a href="~/Home/Buy/@phone.Id">Придбати</a></td>
+        </tr>
+    }
+</table>
